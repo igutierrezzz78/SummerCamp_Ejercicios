@@ -22,6 +22,13 @@ namespace EjemploHerencia
         }
         protected double diasVacaciones;
 
+
+        public virtual void CalculoVacaciones()
+        {
+            diasVacaciones += 10;
+
+        }
+
         public override string ToString() { 
             return $"       Empleado:\n          Nombre: {Nombre} "+
                 $" \n          Dias Vacaciones: {diasVacaciones}";

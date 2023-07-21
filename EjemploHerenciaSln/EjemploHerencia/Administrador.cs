@@ -7,14 +7,21 @@ namespace EjemploHerencia
 {
     public class Administrador : Empleado
     {
-        public Administrador(string nombre) : base(nombre)
+        public Administrador(string nombre, int? plazaParking) : base(nombre)
         {
+            PlazaParking = plazaParking;
         }
 
+        public int? PlazaParking { get; set; }
+
+        public override void CalculoVacaciones()
+        {
+            diasVacaciones += 9;
+        }
         public override string ToString()
         {
-
-            string mensaje = "  Administrativo: \n" + base.ToString();
+            string plaza = (PlazaParking != null) ? "\n     Plaza de parking numero " + PlazaParking : "";
+            string mensaje = "  Administrativo: \n" + base.ToString() + plaza;
 
             return mensaje;
         }
