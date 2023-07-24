@@ -7,7 +7,7 @@ namespace EjemploHerencia
 {
     public class Externo : Empleado
     {
-        private Empresa empresa;
+        public Empresa empresa { get; set; }
 
         public Externo(string nombre, Empresa empresa) : base(nombre)
         {
