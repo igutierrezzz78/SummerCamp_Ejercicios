@@ -87,6 +87,10 @@
 
             var empleadosNuevos = new List<Empleado>            {                new Empleado                {                    Nombre = "Fabricio",                    Apellidos = "Cordero",                    Departamento = Departamento.Desarrollo                },                new Empleado                {                    Nombre = "Julia",                    Apellidos = "Lombardo",                    Departamento = Departamento.Admin                },            };
 
+            List<Empleado> empladosAntiguos = Empleados
+                                           .Select(empleado => empleado)
+                                           .ToList();
+            empladosAntiguos.AddRange(empleadosNuevos);
 
 
         }
